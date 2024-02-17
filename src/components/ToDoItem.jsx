@@ -2,11 +2,12 @@ import React,{useState} from "react";
 import { MdDeleteOutline } from "react-icons/md";
 
 function ToDoItem(props) {
-  let [isDone, setIsDone]=useState(false);
+  let [isDone, setIsDone]=useState(props.completed);
   function handleClick(){
     setIsDone( prev =>{
         return !prev;
     });
+    props.toggleComplete(props);
 }
   return (
     <div className="listItems">
